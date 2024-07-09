@@ -55,7 +55,6 @@ jobs:
           echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
           sudo apt-get update
           sudo apt-get install -y helm
-      - run: helm plugin install https://github.com/helm-unittest/helm-unittest
 
   ###
   # ```{rubric} Helm Lint
@@ -92,6 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
+      - run: helm plugin install https://github.com/helm-unittest/helm-unittest
       - run: helm unittest -f 'resources/tests/*test.yaml' -t JUnit -o results.xml resources/
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
