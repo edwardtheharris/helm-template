@@ -37,7 +37,7 @@ permissions:
 
 ###
 # ```{rubric} Workflow Jobs
-# ```
+# ``` 
 # ---
 # A workflow run is made up of one or more
 # jobs that can run sequentially or in parallel
