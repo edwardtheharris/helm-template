@@ -1,8 +1,8 @@
 ---
-abstract: A helm chart to install PostgreSQL.
+abstract: A helm chart template repository.
 authors: Xander Harris
 date: 2024-04-02
-title: Helm PostgreSQL
+title: Helm Template
 ---
 
-A simple helm chart for PostgreSQL.
+A simple helm chart for Template.

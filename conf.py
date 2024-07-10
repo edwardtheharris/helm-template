@@ -28,7 +28,7 @@ exclude_patterns = [
     '.venv/*',
     '.tmp/*',
     '.pytest_cache/*',
-    'postgresql/templates/NOTES.txt',
+    'resources/templates/NOTES.txt',
 ]
 
 extensions = [
@@ -68,7 +68,7 @@ myst_enable_extensions = [
     "tasklist",
 ]
 myst_title_to_header = True
-project = 'PostgreSQL Helm Chart'
+project = 'Generic Helm Chart'
 rst_epilog = """
 .. sectionauthor:: Xander Harris <xandertheharris@gmail.com>
 """
