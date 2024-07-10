@@ -1,8 +1,8 @@
 ---
-abstract: Chart, values and templates for PostgreSQL.
+abstract: Chart, values and templates.
 authors: Xander Harris
 date: 2024-04-28
-title: PostgreSQL Chart and Templates
+title: Chart and Templates
 ---
 
 ## Usage
@@ -11,10 +11,10 @@ Typical Helm chart rules.
 
 ### Chart
 
-```{autoyaml} postgresql/Chart.yaml
+```{autoyaml} resources/Chart.yaml
 ```
 
 #### Values
 
-```{autoyaml} postgresql/values.yaml
+```{autoyaml} resources/values.yaml
 ```
