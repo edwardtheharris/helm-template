@@ -1,18 +1,34 @@
 ---
-abstract: CI/CD usage guide.
-authors: Xander Harris
-date: 2024-04-28
-title: Continuous Integration and Delivery
+abstract: Continuous Integration, Delivery, and Deployment.
+authors:
+    - name: Xander Harris
+      email: xandertheharris@gamil.com
+date: 2024-08-04
+title: CI/CD usage guide
 ---
 
 Or something like it.
 
-## Helm Workflow
+## GitHub Action Workflows
+
+The following workflows are in use by this repository.
+
+### CodeQL Workflow
+
+```{autoyaml} .github/workflows/codeql.yml
+```
+
+### Helm Workflow
 
 ```{autoyaml} .github/workflows/helm.yml
 ```
 
-## Pages Workflow
+### OSSAR Workflow
+
+```{autoyaml} .github/workflows/ossar.yml
+```
+
+### Pages Workflow
 
 ```{autoyaml} .github/workflows/pages.yml
 ```
