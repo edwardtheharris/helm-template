@@ -40,10 +40,13 @@ Typical Helm chart rules.
 
 ### Chart
 
-```{autoyaml} resources/Chart.yaml
+```{autoyaml} Chart.yaml
 ```
 
 #### Values
 
-```{autoyaml} resources/values.yaml
+```{autoyaml} values.yaml
+```
+
+```{sectionauthor} Xander Harris <xandertheharris@gmail.com>
 ```
