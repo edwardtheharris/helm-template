@@ -4,17 +4,18 @@
 # ---
 # Tests to validate the deployment of the described StatefulSet.
 suite: test for statefulset
+release:
+  name: chart
 templates:
-  - statefulset.yaml
+  - templates/statefulset.yaml
+values:
+  - ../values.yaml
 tests:
   - asserts:
       - isKind:
           of: StatefulSet
       - equal:
           path: metadata.name
-          pattern: postgres
+          value: chart
     it: should be a StatefulSet
-    set:
-      postgresql:
-        name: postgres
 

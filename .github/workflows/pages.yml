@@ -37,7 +37,7 @@ permissions:
 
 ###
 # ```{rubric} Workflow Jobs
-# ``` 
+# ```
 # ---
 # A workflow run is made up of one or more
 # jobs that can run sequentially or in parallel
@@ -68,6 +68,8 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
+          check_name: markdownlint
+          comment_title: "Markdown Lint Tests"
           files: markdownlint-cli2-junit.xml
   ###
   # ```{rubric} Build GitHub Pages Site

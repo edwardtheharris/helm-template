@@ -7,10 +7,10 @@ affinity:
   requiredDuringSchedulingIgnoredDuringExecution:
     nodeSelectorTerms:
       - matchExpressions:
-          - key: application
+          - key: kubernetes.io/os
             operator: In
             values:
-              - true
+              - linux
 autoscaling:
   enabled: false
   maxReplicas: 3
@@ -18,10 +18,10 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-fullnameOverride: "postgres"
+fullnameOverride: "chart"
 image:
   pullPolicy: IfNotPresent
-  repository: postgres
+  repository: chart
   # Overrides the image tag whose default is the chart appVersion.
   tag: "16-alpine"
 
@@ -47,33 +47,28 @@ livenessProbe:
     command:
     - pg_isready
     - -U
-    - postgres
+    - chart
   failureThreshold: 3 # When to give up and restart the container
   initialDelaySeconds: 30 # Delay before the first probe is initiated
   periodSeconds: 10 # How often to perform the probe
   successThreshold: 1 # Minimum consecutive successes for the probe to be considered successful after having failed
   timeoutSeconds: 5 # When the probe times out
-nameOverride: "postgres"
+nameOverride: "chart"
 nodeSelector: {}
 persistence:
   size: 100Gi
-  storageClass: local-storage
+  storageClass: csi-driver-lvm-linear
 podAnnotations: {}
 podLabels:
-  app: postgres
+  app: chart
 podSecurityContext: {}
 # fsGroup: 2000
-postgresql:
-  database: postgres
-  name: postgres
-  password: postgres
-  username: postgres
 readinessProbe:
   exec:
     command:
     - pg_isready
     - -U
-    - postgres
+    - chart
   failureThreshold: 3 # When to give up, marking the Pod as Unready
   initialDelaySeconds: 5 # Delay before the first probe is initiated, can be shorter than liveness probe
   periodSeconds: 5 # How often to perform the probe
@@ -115,14 +110,14 @@ serviceAccount:
   create: true
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: "postgres"
+  name: "chart"
 tolerations: []
 type: StatefulSet
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts:
-- mountPath: "/mnt/k8s/psql"
-  name: data
-  readOnly: false
+volumeMounts: []
+# - mountPath: "/mnt/k8s/psql"
+#   name: data
+#   readOnly: false
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
