@@ -4,8 +4,10 @@ abstract: >-
    sphinx-quickstart on Sun Apr 28 15:35:08 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-authors: Xander Harris
-date: 2024-04-28
+authors:
+   - name: Xander Harris
+     email: xandertheharris@gmail.com
+date: 2024-08-04
 title: Template Helm Chart
 ---
 
@@ -14,15 +16,13 @@ title: Template Helm Chart
 ```{toctree}
 :maxdepth: 2
 
-manifests/index
-resources/index
 workflows/index
 ```
 
-### Meta Contents
-
 ```{toctree}
-cicd
+:caption: meta
+
+.github/index
 license
 readme
 security
@@ -33,3 +33,17 @@ security
 * {ref}`genindex`
 * {ref}`modindex`
 * {ref}`search`
+
+## Usage
+
+Typical Helm chart rules.
+
+### Chart
+
+```{autoyaml} resources/Chart.yaml
+```
+
+#### Values
+
+```{autoyaml} resources/values.yaml
+```
