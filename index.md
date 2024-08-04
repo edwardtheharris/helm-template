@@ -13,10 +13,7 @@ title: Template Helm Chart
 
 ## Repository Contents
 
-```{toctree}
-:maxdepth: 2
-
-workflows/index
+```{contents}
 ```
 
 ```{toctree}
