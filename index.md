@@ -17,6 +17,12 @@ title: Template Helm Chart
 ```
 
 ```{toctree}
+:caption: contents
+
+tests/index.md
+```
+
+```{toctree}
 :caption: meta
 
 .github/index
@@ -31,6 +37,21 @@ security
 * {ref}`modindex`
 * {ref}`search`
 
+```{glossary}
+GitHub
+   Most likely the site this repository is hosted on. More information is
+   available [here](https://github.com).
+
+Helm
+   A tool commonly used to deploy applications to {term}`Kubernetes`. More
+   information is available [here](https://helm.sh).
+
+Kubernetes
+   An ancient Greek word that means 'sailor' or 'navigator', it is the
+   most common container orchestration system currently in use. More
+   information is available [here](https://kubernetes.io).
+```
+
 ## Usage
 
 Typical Helm chart rules.
@@ -40,7 +61,7 @@ Typical Helm chart rules.
 ```{autoyaml} Chart.yaml
 ```
 
-#### Values
+### Values
 
 ```{autoyaml} values.yaml
 ```
