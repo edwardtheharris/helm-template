@@ -13,8 +13,10 @@ title: Template Helm Chart
 
 ## Repository Contents
 
+````{sidebar}
 ```{contents}
 ```
+````
 
 ```{toctree}
 :caption: contents
